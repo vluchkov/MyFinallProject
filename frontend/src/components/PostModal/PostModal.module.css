@@ -1,0 +1,404 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: var(--background-primary);
+  border-radius: 12px;
+  max-width: 935px;
+  width: 90%;
+  max-height: 90vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.modalGrid {
+  display: grid;
+  grid-template-columns: 1fr 335px;
+  height: 100%;
+}
+
+.mediaSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.postMedia {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.videoPlayerContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.reactPlayer > div { /* Targeting the inner div of ReactPlayer for 100% height */
+  height: 100% !important;
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #dbdbdb;
+  max-height: 90vh; /* Ограничиваем высоту, чтобы соответствовать .modalContent */
+}
+
+.header {
+  padding: 16px 20px; /* Увеличенные отступы */
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dbdbdb;
+  flex-shrink: 0; /* Заголовок не должен сжиматься */
+}
+
+/* Новый контейнер для контента и комментариев */
+.contentAndComments {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden; /* Важно для управления внутренней прокруткой */
+}
+
+/* Контейнер для описания поста (caption) */
+.captionContainer {
+  display: flex;
+  align-items: flex-start; /* Выравниваем аватар и текст по верху */
+  padding: 16px 20px; /* Увеличенные отступы */
+  margin-bottom: 10px; /* Отступ между описанием и комментариями */
+}
+
+.contentScrollable {
+  flex-grow: 1;
+  overflow-y: auto; /* Включаем прокрутку для этой области */
+  padding-bottom: 10px; /* Небольшой отступ снизу, чтобы не прилипало к форме */
+}
+
+.commentsSection {
+  padding: 0 20px; /* Увеличенные горизонтальные отступы */
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Увеличенное расстояние между комментариями */
+}
+
+.commentItem {
+  display: flex;
+  align-items: flex-start; /* Аватар и текст комментария выровнены по верху */
+  gap: 12px; /* Увеличенный отступ */
+}
+
+.commentAuthorAvatar {
+  width: 36px; /* Увеличенный размер аватара */
+  height: 36px; /* Увеличенный размер аватара */
+  border-radius: 50%;
+  flex-shrink: 0; /* Аватар не должен сжиматься */
+  object-fit: cover;
+}
+
+.commentContent {
+  display: flex;
+  flex-direction: column; /* Имя пользователя и текст комментария друг под другом */
+  font-size: 15px; /* Немного больший размер шрифта */
+  line-height: 1.5;
+  word-break: break-word; /* Перенос длинных слов */
+}
+
+.commentAuthorUsername {
+  font-weight: 600;
+  color: #262626;
+  margin-right: 6px;
+}
+
+.commentText {
+  color: #262626;
+}
+
+.noComments {
+  color: #8e8e8e;
+  font-size: 15px;
+  text-align: center;
+  padding: 25px 0; /* Увеличенный отступ */
+}
+
+/* Контейнер для действий (лайки, статистика) и формы добавления комментария */
+.actionsAndFormContainer {
+  border-top: 1px solid #dbdbdb;
+  padding: 16px 20px 10px; /* Увеличенные отступы */
+  flex-shrink: 0; /* Эта секция не должна сжиматься */
+}
+
+.actions {
+  padding-top: 0; /* Убираем верхний отступ, так как он уже есть в контейнере */
+  display: flex;
+  align-items: center;
+  gap: 18px; /* Увеличенный отступ */
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #262626;
+  margin-top: 10px; /* Увеличенный отступ */
+}
+
+.stats span {
+  font-weight: 600;
+}
+
+.postTimestamp {
+  font-size: 11px;
+  color: #8e8e8e;
+  text-transform: uppercase;
+  margin-top: 10px; /* Увеличенный отступ */
+}
+
+.commentForm {
+  display: flex;
+  align-items: center;
+  margin-top: 15px; /* Увеличенный отступ */
+  padding-top: 15px;
+  border-top: 1px solid #efefef; /* Разделитель перед формой */
+}
+
+.commentInput {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 10px 0; /* Увеличенный вертикальный отступ */
+  font-size: 15px;
+  background-color: transparent;
+  color: #262626;
+}
+
+.commentSubmitButton {
+  background: none;
+  border: none;
+  color: #0095f6; /* Синий цвет Instagram */
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.commentSubmitButton:disabled {
+  color: #b2dffc;
+  cursor: default;
+}
+
+/* Новый контейнер для кнопок в заголовке */
+.headerControls {
+  margin-left: auto; /* Прижимает группу кнопок к правому краю */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Отступ между элементами управления в заголовке */
+}
+
+.authorAvatar {
+  width: 44px; /* Увеличенный размер аватара */
+  height: 44px; /* Увеличенный размер аватара */
+  border-radius: 50%;
+  margin-right: 14px; /* Увеличенный отступ справа от аватара */
+  object-fit: cover;
+}
+
+.authorUsername {
+  font-weight: 600;
+  color: #262626;
+  font-size: 16px; /* Возможно, сделать шрифт побольше для имени пользователя */
+}
+
+.content {
+  padding: 16px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.caption {
+  margin: 0;
+  margin-left: 20px;
+  margin-right: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.closeButton {
+  /* Удалены position: absolute, top, right */
+  background: none;
+  border: none;
+  font-size: 1.8rem; /* Немного больше для лучшего клика */
+  color: #262626; /* Темный цвет для видимости */
+  cursor: pointer;
+  padding: 5px; /* Добавлено для удобства клика */
+  line-height: 1;
+  margin-left: 8px; /* Отступ от кнопки опций */
+}
+
+.closeButton:hover {
+  color: #000; /* Немного темнее при наведении */
+}
+
+/* Стили для меню опций */
+.optionsMenuContainer {
+  position: relative; /* Для позиционирования выпадающего списка */
+  /* margin-left: auto;  Удалено, т.к. управляется .headerControls */
+  /* Можно добавить margin-right: 8px; если нужен отступ от кнопки закрытия, но margin-left у closeButton уже есть */
+}
+
+.optionsButton {
+  background: none;
+  border: none;
+  color: #262626; /* Изменен цвет на темный, чтобы кнопка была видна на светлом фоне */
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+}
+
+.optionsButton:hover {
+  color: #ccc;
+}
+
+.optionsDropdown {
+  position: absolute;
+  top: 100%; /* Располагается под кнопкой */
+  right: 0; /* Выравнивается по правому краю кнопки */
+  background-color: #2c2c2c; /* Темный фон, как в Instagram */
+  border: 1px solid #444;
+  border-radius: 4px;
+  z-index: 10; /* Чтобы был поверх других элементов */
+  min-width: 150px; /* Минимальная ширина */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.optionItem {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background: none;
+  border: none;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.optionItem:hover {
+  background-color: #3a3a3a;
+}
+
+/* Стиль для пункта "Удалить" */
+.deleteItem {
+  color: #ed4956; /* Красный цвет, как в Instagram для удаления */
+}
+
+.deleteItem:hover {
+  color: #fff; /* Можно сделать белым при наведении, если фон темный */
+  background-color: #ed4956; /* Или инвертировать цвета */
+}
+
+/* Стиль для неактивных пунктов меню */
+.optionItem:disabled {
+  color: #777; /* Серый цвет для неактивных пунктов */
+  cursor: not-allowed;
+}
+
+.optionItem:disabled:hover {
+  background-color: transparent; /* Убираем эффект наведения для неактивных */
+}
+
+/* Стиль для текста ошибки в модальном окне PostModal */
+.errorTextModal {
+  color: #ed4956;
+  font-size: 0.9rem;
+  padding: 0 16px 10px; /* Отступы, чтобы соответствовать другим элементам */
+  text-align: center;
+}
+
+.likeButton {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #262626; /* Общий цвет иконок */
+}
+
+.likeButton svg {
+  width: 28px; /* Увеличенный размер иконок */
+  height: 28px; /* Увеличенный размер иконок */
+}
+
+.likeButton.liked svg {
+  color: #ed4956;
+  fill: #ed4956;
+}
+
+.themeDark .modalContent, .themeDark .contentScrollable, .themeDark .commentsSection {
+  background: #222;
+  color: #fff;
+}
+.themeDark .commentInput {
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+}
+.themeDark .commentSubmitButton {
+  background: #444;
+  color: #fff;
+  border: none;
+}
+.themeDark .noComments {
+  color: #aaa;
+}
+.themeDark .caption, .themeDark .commentText {
+  color: #fff;
+}
+
+/* Username и лайк всегда светлые */
+.commentAuthorUsername, .likeCount {
+  color: #222 !important;
+}
+.themeDark .commentAuthorUsername, .themeDark .likeCount {
+  color: #fff !important;
+}
+
+/* Убрать общий фон для светлой темы */
+.modalContent, .contentScrollable, .commentsSection {
+  background: #fff;
+  color: #222;
+}
+
+@media (max-width: 935px) {
+  .modalGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .detailsSection {
+    border-left: none;
+    border-top: 1px solid #dbdbdb;
+  }
+} 

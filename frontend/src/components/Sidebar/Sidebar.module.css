@@ -1,0 +1,189 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background-color: var(--sidebar-background);
+  border-right: 1px solid var(--sidebar-border);
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px 20px;
+  z-index: 100;
+}
+
+.sidebarHeader {
+  padding: 25px 12px 16px;
+  margin-bottom: 19px;
+}
+
+.logo {
+  display: block;
+}
+
+.instagramLogo {
+  height: 90px;
+  filter: var(--logo-filter);
+}
+
+.sidebarNav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--sidebar-text);
+  transition: background-color 0.2s ease;
+}
+
+.navItem:hover {
+  background-color: var(--dropdown-hover-background);
+}
+
+.navItem.active {
+  font-weight: 700;
+}
+
+.navIconContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background-color: var(--accent-color);
+  color: var(--sidebar-background);
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  line-height: 1;
+  min-width: 18px;
+  text-align: center;
+  border: 2px solid var(--sidebar-background);
+}
+
+.navIcon {
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+  border-radius: 50%;
+  background-color: var(--icon-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navIcon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+  filter: var(--icon-filter);
+}
+
+.navTitle {
+  margin-left: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: font-weight 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.sidebarFooter {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 1264px) {
+  .sidebar {
+    width: var(--sidebar-width-collapsed);
+  }
+
+  .navTitle {
+    display: none;
+  }
+
+  .navIcon {
+    margin-right: 0;
+  }
+
+  .instagramLogo {
+    width: auto;
+    height: 90px;
+    object-fit: contain;
+  }
+}
+
+/* Анимации для иконок */
+.navItem:hover .navIcon img {
+  transform: scale(1.1);
+}
+
+/* Стили для активного состояния */
+.navItem.active .navIcon img {
+  transform: scale(1.1);
+}
+
+.profileImage {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Styles for the new menu trigger */
+.menuTrigger {
+  position: relative;
+}
+
+/* Styles for the dropdown menu */
+.dropdownMenu {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  background-color: var(--dropdown-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  z-index: 1000;
+  width: 266px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--dropdown-border);
+}
+
+.dropdownMenuItem {
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  color: var(--dropdown-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.dropdownMenuItem:hover {
+  background-color: var(--dropdown-hover-background);
+}
+
+.dropdownMenuItemLogout {
+  border-top: 1px solid var(--dropdown-border);
+  margin-top: 4px;
+  padding-top: 12px;
+}
+
+/* Ensure the logo and other items are not affected by generic button styles if any */
+/* Removed redundant rule for .logo img.instagramLogo as the main .instagramLogo handles it */ 

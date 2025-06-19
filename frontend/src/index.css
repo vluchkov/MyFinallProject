@@ -1,0 +1,349 @@
+:root {
+  --sidebar-width: 245px;
+  --sidebar-width-collapsed: 72px;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --neon-main: #00ffe7;
+  --neon-glow: #00ffe7cc;
+  --scrollbar-bg: #181a20;
+  --scrollbar-track: #23272f;
+}
+
+body.theme-light {
+  --background-primary: #fff;
+  --background-secondary: #f6f6f6;
+  --text-primary: #222;
+  --text-secondary: #888;
+  --text-on-accent: #fff;
+  --accent-color: #3897f0;
+  --accent-color-hover: #2563b7;
+  --border-color: #e6e6e6;
+  --button-background: #3897f0;
+  --button-text: #fff;
+  --sidebar-background: #fff;
+  --sidebar-text: #222;
+  --dropdown-background: #fff;
+  --dropdown-text: #222;
+
+  --overlay-background-standard: rgba(0, 0, 0, 0.2);
+
+  --border-error: #cf5042;
+
+  --link-color: #3498db;
+  --link-hover-color: #2980b9;
+
+  --button-hover-background: #2980b9;
+  --button-hover-border: #2980b9;
+
+  --sidebar-border: #d1d8e0;
+  
+  --dropdown-border: #c8d1da;
+  --dropdown-hover-background: #dee5ed;
+
+  --logo-filter: none;
+  --icon-color-liked: #e74c3c;
+  --icon-background: transparent;
+  --icon-filter: none;
+  --profile-icon-background: transparent;
+
+  --neon-main: #ff00cc;
+  --neon-glow: #ff00cc99;
+  --scrollbar-bg: #f0f0f0;
+  --scrollbar-track: #e6ecf0;
+
+  --username-color: #222;
+  --followers-count-color: #0e0e0e;
+}
+
+body.theme-dark {
+  --background-primary: #181818;
+  --background-secondary: #232323;
+  --text-primary: #faf8f8;
+  --text-secondary: #100f0f;
+  --text-secondaryy: white;
+  --text-on-accent: #fff;
+  --accent-color: #8f5fff;
+  --accent-color-hover: #6d3fd6;
+  --border-color: #333;
+  --button-background: #232323;
+  --button-text: #fff;
+  --sidebar-background: #181818;
+  --sidebar-text: #fff;
+  --dropdown-background: #232323;
+  --dropdown-text: #fff;
+
+  --overlay-background-standard: rgba(23, 22, 22, 0.4);
+
+  --border-error: #ef5350;
+
+  --link-color: #0e9488;
+  --link-hover-color: #0b6e65;
+
+  --button-hover-background: #0b6e65;
+  --button-hover-border: #0b6e65;
+
+  --sidebar-border: #0e9488;
+  
+  --dropdown-border: #1bbfa6;
+  --dropdown-hover-background: #b2ebe4;
+  
+  --logo-filter: invert(1) hue-rotate(140deg) brightness(1.5) contrast(1.2);
+  --icon-color-liked: #ff8a80;
+  --icon-background: rgba(0, 51, 46, 0.08);
+  --icon-filter: invert(1) brightness(1.2) contrast(1.1);
+  --profile-icon-background: rgba(0, 51, 46, 0.08);
+
+  --username-color: #0d0c0c;
+  --username-colorr: #f6f2f2;
+  --followers-count-color: #e4ebe9;
+}
+
+body.theme-violet {
+  --background-primary: #f6f0ff;
+  --background-secondary: #ede7fa;
+  --text-primary: #3d1e4f;
+  --text-secondary: #7c4d99;
+  --text-on-accent: #fff;
+  --accent-color: #8f5fff;
+  --accent-color-hover: #6d3fd6;
+  --border-color: #d1c4e9;
+  --button-background: #8f5fff;
+  --button-text: #fff;
+  --sidebar-background: #ede7fa;
+  --sidebar-text: #3d1e4f;
+  --dropdown-background: #fff;
+  --dropdown-text: #3d1e4f;
+
+  --overlay-background-standard: rgba(0, 0, 0, 0.5);
+
+  --border-error: #e74c3c;
+
+  --link-color: #7c4d99;
+  --link-hover-color: #5e3370;
+
+  --button-hover-background: #5e3370;
+  --button-hover-border: #5e3370;
+
+  --sidebar-border: #7c4d99;
+  
+  --dropdown-border: #a259c7;
+  --dropdown-hover-background: #e2b7f5;
+  
+  --logo-filter: invert(1) hue-rotate(270deg) brightness(1.1) contrast(1.1);
+  --icon-color-liked: #e74c3c;
+  --icon-background: rgba(61, 30, 79, 0.08);
+  --icon-filter: none;
+  --profile-icon-background: rgba(61, 30, 79, 0.08);
+
+  --username-color: #222;
+  --followers-count-color: #0d0d0e;
+}
+
+body.theme-mint {
+  --background-primary: #eafff7;
+  --background-secondary: #d6f5ec;
+  --text-primary: #1b4d2b;
+  --text-secondary: #4caf50;
+  --text-on-accent: #fff;
+  --accent-color: #00b894;
+  --accent-color-hover: #00997a;
+  --border-color: #b2ebe4;
+  --button-background: #00b894;
+  --button-text: #fff;
+  --sidebar-background: #d6f5ec;
+  --sidebar-text: #1b4d2b;
+  --dropdown-background: #fff;
+  --dropdown-text: #1b4d2b;
+
+  --overlay-background-standard: rgba(23, 22, 22, 0.4);
+
+  --border-error: #ef5350;
+
+  --link-color: #0e9488;
+  --link-hover-color: #0b6e65;
+
+  --button-hover-background: #0b6e65;
+  --button-hover-border: #0b6e65;
+
+  --sidebar-border: #1bbfa6;
+  
+  --dropdown-border: #1bbfa6;
+  --dropdown-hover-background: #b2ebe4;
+  
+  --logo-filter: invert(1) hue-rotate(140deg) brightness(1.5) contrast(1.2);
+  --icon-color-liked: #ff8a80;
+  --icon-background: rgba(0, 51, 46, 0.08);
+  --icon-filter: none;
+  --profile-icon-background: rgba(0, 51, 46, 0.08);
+
+  --username-color: #222;
+  --followers-count-color: #080808;
+}
+
+body.theme-peach {
+  --background-primary: #fff6f0;
+  --background-secondary: #ffe0cc;
+  --text-primary: #7a4e2e;
+  --text-secondary: #ffb385;
+  --text-on-accent: #fff;
+  --accent-color: #ff8a65;
+  --accent-color-hover: #ff7043;
+  --border-color: #ffd1b3;
+  --button-background: #ff8a65;
+  --button-text: #fff;
+  --sidebar-background: #ffe0cc;
+  --sidebar-text: #7a4e2e;
+  --dropdown-background: #fff;
+  --dropdown-text: #7a4e2e;
+
+  --overlay-background-standard: rgba(0, 0, 0, 0.6);
+
+  --border-error: #e74c3c;
+
+  --link-color: #f77f00;
+  --link-hover-color: #db6e00;
+
+  --button-hover-background: #db6e00;
+  --button-hover-border: #db6e00;
+
+  --sidebar-border: #f77f00;
+  
+  --dropdown-border: #f77f00;
+  --dropdown-hover-background: #7a4e2e;
+  
+  --logo-filter: invert(1) hue-rotate(30deg) brightness(1.5) contrast(1.2);
+  --icon-color-liked: #e74c3c;
+  --icon-background: white;
+  --icon-filter: none;
+  --profile-icon-background: white;
+
+  --username-color: #222;
+  --followers-count-color: #060606;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-background);
+  color: var(--button-text);
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s, color 0.25s;
+}
+button:hover {
+  border-color: var(--button-hover-border);
+  background-color: var(--button-hover-background);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.App {
+  display: flex;
+  min-height: 100vh;
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Базовые стили для скроллбара */
+::-webkit-scrollbar {
+  width: 18px;
+  background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--neon-main) 40%, #fff 100%);
+  border-radius: 50px;
+  border: 4px solid var(--scrollbar-bg);
+  min-height: 60px;
+  box-shadow: 0 0 24px 8px var(--neon-glow), 0 0 0 4px var(--neon-main) inset;
+  position: relative;
+}
+
+::-webkit-scrollbar-thumb::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.7) 50%, transparent 60%);
+  animation: light-move 2.2s linear infinite;
+  pointer-events: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #fff 0%, var(--neon-main) 60%);
+  min-width: 28px;
+  width: 28px;
+  box-shadow: 0 0 40px 16px var(--neon-main), 0 0 0 8px var(--neon-main) inset;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 50px;
+  margin: 8px 0;
+  box-shadow: 0 0 8px 2px var(--neon-glow) inset;
+}
+
+@keyframes light-move {
+  0% { left: -60%; }
+  100% { left: 100%; }
+}
+
+/* Для Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-main) var(--scrollbar-track);
+}
+
+/* Анимация волны */
+@keyframes wave-move {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, 40px 40px;
+  }
+}
+
+/* Анимация пульсации */
+@keyframes neon-pulse {
+  0% {
+    box-shadow: 0 0 24px 8px var(--neon-glow), 0 0 0 4px var(--neon-main) inset;
+  }
+  100% {
+    box-shadow: 0 0 40px 16px var(--neon-main), 0 0 0 8px var(--neon-main) inset;
+  }
+}

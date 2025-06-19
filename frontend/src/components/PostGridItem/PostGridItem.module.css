@@ -1,0 +1,75 @@
+.postGridItem {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Creates a square aspect ratio */
+  overflow: hidden;
+  cursor: pointer;
+  background-color: var(--background-secondary);
+}
+
+.postImage,
+.videoThumbnailContainer,
+.videoPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.videoThumbnailContainer {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.videoPlayer {
+  pointer-events: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.postGridItem:hover .overlay {
+  opacity: 1;
+}
+
+.overlayContent {
+  display: flex;
+  gap: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.overlayStat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.heartIcon, .commentIcon {
+  /* You can use actual SVG icons or more sophisticated styling here */
+  font-size: 1.5em; /* Example size */
+}
+
+.playIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+} 

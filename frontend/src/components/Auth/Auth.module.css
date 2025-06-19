@@ -1,0 +1,140 @@
+.authContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #fafafa;
+}
+
+.authBox {
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  padding: 20px 40px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logo img {
+  max-width: 175px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputGroup {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 9px 8px;
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #a8a8a8;
+}
+
+.showPasswordButton {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #262626;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.showPasswordButton:hover {
+  color: #00376b;
+}
+
+.error {
+  color: #ed4956;
+  font-size: 14px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.submitButton {
+  background: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 16px;
+  font-weight: 600;
+  margin-top: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submitButton:not(:disabled):hover {
+  background: #1877f2;
+}
+
+.forgotPassword {
+  display: block;
+  text-align: center;
+  color: #00376b;
+  font-size: 12px;
+  margin-top: 12px;
+  text-decoration: none;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+.registerPrompt {
+  color: #262626;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+}
+
+.registerLink {
+  color: #0095f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.registerLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 450px) {
+  .authBox {
+    padding: 20px;
+    border: none;
+    background: transparent;
+  }
+  
+  .input {
+    font-size: 16px; /* Prevents zoom on mobile */
+  }
+} 

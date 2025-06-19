@@ -1,0 +1,189 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 0, 0, 0.3) !important; /* Временный красный фон для отладки */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999 !important; /* Очень высокий z-index для отладки */
+}
+
+.modalContent {
+  background-color: #fffbe6 !important; /* Временный жёлтый фон для отладки */
+  color: #222 !important;
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  max-height: 70vh;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center; /* Центрируем заголовок */
+  position: relative; /* Для абсолютного позиционирования кнопки закрытия */
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 1rem; /* Размер как на скриншоте */
+  font-weight: 600;
+  flex-grow: 1; /* Чтобы заголовок занимал доступное пространство и был по центру */
+  text-align: center;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0 8px; /* Небольшой паддинг для удобства клика */
+  line-height: 1; /* Убрать лишнюю высоту */
+  position: absolute; /* Позиционируем справа */
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.searchInputContainer {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.userList {
+  overflow-y: auto;
+  padding: 8px 0;
+  flex-grow: 1;
+  background: #e6ffed !important; /* Временный зелёный фон для отладки */
+}
+
+.userItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  transition: background-color 0.2s ease;
+  background: #fff !important; /* Временный белый фон для отладки */
+  color: #111 !important;
+  border-bottom: 1px solid #ccc;
+}
+
+.userItem:hover {
+  background-color: var(--dropdown-hover-background); /* Или var(--background-primary) */
+}
+
+.userInfoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit; /* Наследуем цвет текста */
+  flex-grow: 1;
+}
+
+.userAvatar {
+  width: 40px; /* Размер аватара */
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--username-color);
+}
+
+.fullName {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.followButton {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-left: 10px; /* Отступ от информации о пользователе */
+  flex-shrink: 0; /* Чтобы кнопка не сжималась */
+}
+
+.followingButton { /* Синяя кнопка "Подписаться" */
+  background-color: var(--accent-color);
+  color: var(--text-on-accent);
+}
+
+.followingButton:hover {
+  background-color: var(--accent-color-hover);
+}
+
+.unfollowButton { /* Серая кнопка "Отписаться" */
+  background-color: var(--button-background); /* Используем стандартный фон кнопки */
+  color: var(--button-text);
+  border: 1px solid var(--border-color);
+}
+
+.unfollowButton:hover {
+  background-color: var(--background-primary); /* Или var(--dropdown-hover-background) */
+}
+
+.noUsersText {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* ++ Новые стили для загрузки и ошибок ++ */
+.loadingText {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.errorText {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--border-error, #dc3545); /* Используем переменную для цвета ошибки */
+  background-color: rgba(var(--border-error, 220, 53, 69), 0.1);
+  border-radius: 4px;
+  margin: 16px;
+  font-size: 1rem;
+} 

@@ -1,0 +1,163 @@
+/* Overlay for the panel */
+.searchPanelOverlay {
+  position: fixed;
+  top: 0;
+  left: calc(var(--sidebar-width) + 397px);
+  width: calc(100% - var(--sidebar-width) - 397px);
+  height: 100%;
+  background-color: var(--overlay-background-standard); /* Use variable */
+  z-index: 100; /* Ниже панели поиска, но выше основного контента */
+}
+
+/* The panel itself */
+.searchPanel {
+  position: fixed;
+  left: calc(var(--sidebar-width) + 16px);
+  top: 0;
+  width: 381px;
+  height: 100%;
+  background-color: var(--background-secondary, #f8f9fa);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 6px rgba(0,0,0,0.08);
+  border-radius: 0 18px 18px 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 101;
+  padding: 0;
+  border-right: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: box-shadow 0.3s, background 0.3s, transform 0.25s cubic-bezier(.4,0,.2,1);
+  transform: translateX(0);
+  animation: slideInPanel 0.25s cubic-bezier(.4,0,.2,1);
+}
+@keyframes slideInPanel {
+  from { transform: translateX(-40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.panelHeader {
+  padding: 32px 28px 16px 28px;
+}
+
+.panelHeader h2 {
+  margin: 0;
+  margin-bottom: 20px; /* Отступ после заголовка "Поиск" */
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 7px;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: var(--text-secondary);
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+.closeButton:hover {
+  background: #ececec;
+  color: #222;
+}
+
+.searchInputContainer {
+  padding: 18px 28px 18px 28px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.searchInput {
+  width: 100%;
+  padding: 14px 20px;
+  border: 1.5px solid var(--border-color);
+  background-color: var(--background-primary, #fff);
+  border-radius: 14px;
+  font-size: 18px;
+  box-sizing: border-box;
+  color: var(--text-primary);
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.searchInput:focus {
+  border: 1.5px solid #b3b3b3;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.searchInput::placeholder {
+  color: var(--text-secondary); /* Use variable */
+}
+
+.loadingMessage,
+.errorMessage,
+.infoMessage {
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-secondary); /* Use variable */
+}
+
+.errorMessage {
+  color: var(--text-error); /* Use variable */
+  background-color: transparent; /* Ensure no conflicting background */
+}
+
+.resultsList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.resultItem {
+  display: flex;
+  align-items: center;
+  padding: 14px 28px;
+  gap: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.18s, box-shadow 0.18s;
+}
+.resultItem:hover {
+  background-color: #e6eaf0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f0f0f0;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.fullName {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+/* Медиа-запрос для адаптивной ширины сайдбара */
+@media (max-width: 1264px) {
+  .searchPanel {
+    left: calc(var(--sidebar-width-collapsed) + 16px);
+    width: 381px;
+  }
+  .searchPanelOverlay {
+    left: calc(var(--sidebar-width-collapsed) + 381px + 16px);
+    width: calc(100% - var(--sidebar-width-collapsed) - 381px - 16px);
+  }
+} 

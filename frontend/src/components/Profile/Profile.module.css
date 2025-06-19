@@ -1,0 +1,586 @@
+.profileContainer {
+  max-width: 935px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  color: var(--text-primary);
+}
+a {
+  text-decoration: none;
+}
+.profileHeader {
+  display: flex;
+  margin-bottom: 44px;
+}
+
+.avatarSection {
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profileInfo {
+  flex: 1;
+}
+
+.profileTopRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profileUsername {
+  color: var(--username-colorr);
+  font-size: 28px;
+  font-weight: 700;
+  font-style: italic;
+  margin: 0;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.editProfileButton,
+.followButton {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 5px 9px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.editProfileButton:hover {
+  background-color: var(--background-primary);
+}
+
+.followButton {
+  background-color: var(--accent-color);
+  border: none;
+  color: var(--text-on-accent);
+}
+
+.followButton:hover {
+  background-color: var(--accent-color-hover);
+}
+
+.unfollowButton {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.unfollowButton:hover {
+  border-color: var(--border-error);
+  color: var(--text-error);
+}
+
+.statsRow {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  font-size: 16px;
+  color: var(--text-secondaryy);
+}
+
+.statValue {
+  color: var(--followers-count-color);
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.bioSection {
+  max-width: 400px;
+}
+
+.fullName {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.bio {
+  white-space: pre-wrap;
+  margin-bottom: 4px;
+}
+
+.website {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.website:hover {
+  text-decoration: underline;
+}
+
+.tabsContainer {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-top: 1px solid transparent;
+  margin-top: -1px;
+}
+
+.tab.active {
+  color: var(--text-primary);
+  border-top-color: var(--text-primary);
+}
+
+.tabIcon {
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+}
+
+.tabIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tabsContainer button span {
+  margin-left: 8px;
+}
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding-top: 20px;
+}
+
+.postItem {
+  position: relative;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  background-color: var(--background-secondary);
+  overflow: hidden;
+}
+
+.postImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reactPlayerWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.postVideoPlayer .react-player__preview {
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.videoIconOverlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.videoIconOverlay svg {
+  fill: #ffffff;
+  width: 16px;
+  height: 16px;
+}
+
+.postOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.postItem:hover .postOverlay {
+  opacity: 1;
+}
+
+.postStats {
+  display: flex;
+  gap: 30px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.postStats span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.postStats svg {
+  width: 24px;
+  height: 24px;
+}
+
+.noPostsContainer {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  text-align: center;
+  margin-top: 20px;
+  color: var(--text-secondary);
+}
+
+.noPostsIcon svg {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 24px;
+  fill: var(--text-primary);
+}
+
+.noPostsTitle {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.noPostsSubtitle {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.shareFirstPhotoButton {
+  background-color: var(--accent-color);
+  color: var(--text-on-accent);
+  border: none;
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.shareFirstPhotoButton:hover {
+  background-color: var(--accent-color-hover);
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3897f0;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 100px auto;
+  color: var(--text-secondary);
+  border: 4px solid var(--background-secondary);
+  border-top: 4px solid var(--accent-color);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  text-align: center;
+  color: var(--text-error);
+  padding: 40px 20px;
+  background-color: var(--background-error);
+  border: 1px solid var(--border-error);
+}
+
+.retryButton {
+  background-color: var(--accent-color);
+  color: var(--text-on-accent);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.retryButton:hover {
+  background-color: var(--accent-color-hover);
+}
+
+.updateError {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--background-error);
+  color: var(--text-error);
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+.profileActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.createPostButton {
+  background-color: var(--accent-color);
+  color: var(--text-on-accent);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.createPostButton:hover {
+  background-color: var(--accent-color-hover);
+}
+
+.messageButton {
+  background: var(--accent-color);
+  color: var(--text-on-accent);
+  border: none;
+  border-radius: 4px;
+  padding: 5px 12px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.messageButton:hover {
+  background: var(--accent-color-hover);
+}
+
+@media (max-width: 735px) {
+  .profileHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .avatarSection {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .profileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .statsRow {
+    justify-content: center;
+  }
+
+  .bioSection {
+    text-align: center;
+  }
+
+  .postsGrid {
+    gap: 4px;
+  }
+  
+  .postStats {
+    gap: 20px;
+  }
+  
+  .postStats svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsRow {
+    gap: 20px;
+    font-size: 14px;
+  }
+
+  .profileUsername {
+    font-size: 24px;
+  }
+}
+
+.videoPreviewPlayer .react-player__preview {
+  object-fit: cover;
+}
+
+.videoElementPreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.playIconOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.playIconOverlay svg {
+  fill: white;
+  width: 30px;
+  height: 30px;
+}
+
+.videoPreviewContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.settingsContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.settingsButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--profile-icon-background);
+}
+
+.settingsButton:hover {
+  background-color: var(--dropdown-hover-background);
+}
+
+.settingsIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: var(--icon-filter) !important;
+}
+
+.settingsDropdown {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--dropdown-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  z-index: 1000;
+  width: 266px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--dropdown-border);
+  transform: translateY(100%);
+  transform-origin: bottom right;
+}
+
+.dropdownItem {
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.dropdownItem:hover {
+  background-color: var(--background-hover);
+}
+
+.themeDropdown,
+.languageDropdown {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  background-color: var(--dropdown-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  z-index: 1001;
+  width: 266px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--dropdown-border);
+}
+
+.activeLanguage {
+  background-color: var(--dropdown-hover-background);
+  font-weight: bold;
+}
+
+.settingsDropdown .dropdownItem {
+  position: relative;
+} 

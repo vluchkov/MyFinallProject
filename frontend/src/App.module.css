@@ -1,0 +1,107 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
+
+.mainContent {
+  flex: 1;
+  padding: 20px;
+  margin-left: 244px;
+  transition: margin-left 0.3s ease;
+}
+
+.mainContent.withSidebar {
+  margin-left: 245px;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-primary);
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #0095f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 1264px) {
+  .mainContent.withSidebar {
+    margin-left: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 0;
+    padding: 10px;
+  }
+}
+
+.headerControls {
+  position: fixed;
+  top: 18px;
+  right: 32px;
+  z-index: 1000;
+  display: flex;
+  gap: 12px;
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 6px 14px;
+  align-items: center;
+}
+.themeSelect, .languageSelect {
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 15px;
+  background: #fff;
+  color: #222;
+  outline: none;
+  transition: border 0.2s;
+}
+.themeSelect:focus, .languageSelect:focus {
+  border: 1.5px solid #7b61ff;
+}
+
+.controlGroup {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.iconCircleBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  cursor: pointer;
+  transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+  margin: 0 4px;
+  padding: 0;
+}
+.iconCircleBtn:focus, .iconCircleBtn:hover {
+  border: 2px solid #7b61ff;
+  background: #f4f2ff;
+  outline: none;
+} 

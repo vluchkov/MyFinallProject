@@ -1,0 +1,121 @@
+/* frontend/src/components/notifications/Notifications.module.css */
+.notificationsContainer {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--background-secondary);
+  border-radius: 8px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  color: var(--text-primary);
+}
+
+.notificationsTitle {
+  font-size: 1.5rem; 
+  font-weight: 600;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  margin-left: 170px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+}
+
+.notificationsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.notificationItem {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+.notificationItem:last-child {
+  border-bottom: none;
+}
+
+.notificationItem:hover {
+  background-color: var(--background-primary);
+}
+
+.notificationItem.read {
+  background-color: var(--background-primary);
+  opacity: 0.7;
+}
+
+.avatarLink {
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.senderAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+}
+
+.notificationContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-self: stretch; 
+}
+
+.notificationText {
+  margin: 0;
+  font-size: 0.875rem; 
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.senderUsername {
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.senderUsername:hover {
+  text-decoration: underline;
+}
+
+.actionText {
+  color: var(--text-primary);
+}
+
+.notificationTime {
+  font-size: 0.75rem; 
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.postThumbnailContainer {
+  width: 40px; 
+  height: 40px;
+  margin-left: 12px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 3px; 
+}
+
+.postThumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.postThumbnailPlaceholder {
+    background-color: var(--background-primary);
+}
+
+
+.notificationsContainer > p { 
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  padding: 40px 0;
+} 
